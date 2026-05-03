@@ -20,7 +20,7 @@ export default async function handler(req, res) {
         `;
 
         // 2. CHAMADA PARA A GROQ
-        const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+        const response = await fetch("https://guru-app-amber.vercel.app/api/chat", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${process.env.GROQ_API_KEY}`,
