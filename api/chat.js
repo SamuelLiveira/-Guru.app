@@ -30,7 +30,7 @@ export default async function handler(req, res) {
         `;
 
         // 2. CHAMADA PARA A GROQ
-        const response = await fetch("https://guru-app-amber.vercel.app/api/chat", {
+        const response = await fetch("https://guru-project-eta.vercel.app/api/chat", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${process.env.GROQ_API_KEY}`,
