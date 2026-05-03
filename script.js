@@ -69,7 +69,7 @@ async function sendMessage() {
 
         try {
             // URL corrigida com base na sua imagem
-            const response = await fetch('https://guru-app-amber.vercel.app/api/chat', {
+            const response = await fetch('https://guru-app-amber.vercel.app/API/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
