@@ -1,8 +1,18 @@
 export default async function handler(req, res) {
-    // 1. Verificação de segurança para garantir que é um método POST
-    if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Método não permitido' });
+    // 1. Configuração de Cabeçalhos (CORS) para permitir a conexão do SPCK
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    // 2. Responde rapidamente a consultas de verificação (OPTIONS)
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
     }
+
+    try {
+        const { message, userData } = req.body;
+        // ... o restante do seu código (System Prompt, Fetch da Groq, etc) continua igual abaixo ...
+
 
     try {
         const { message, userData } = req.body;
